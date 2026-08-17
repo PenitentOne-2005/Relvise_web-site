@@ -6,10 +6,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  row-gap: 20px;
+  row-gap: 1.25rem;
 
   & .practice__column {
-    flex: 0 1 250px;
+    flex: 0 1 15.625rem;
   }
 }
 
@@ -27,7 +27,7 @@
 
   & .item-practice__content {
     flex: 1 1 auto;
-    padding: 30px;
+    padding: 1.875rem;
   }
 
   & .item-practice__title {
@@ -53,7 +53,7 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 }
 
@@ -70,7 +70,7 @@
 
 @media (max-width: 1040px) {
   .practice__body {
-    column-gap: 10px;
+    column-gap: 0.625rem;
   }
 }
 
@@ -80,7 +80,7 @@
     & .practice__column {
 
       &:not(:last-child) {
-        padding-right: 20px;
+        padding-right: 1.25rem;
       }
     }
   }
@@ -90,7 +90,7 @@
 @media (max-width: 767px) {
   .item-practice  {
     & .item-practice__content {
-      padding: 15px;
+      padding: 0.9375rem;
     }
   }
 

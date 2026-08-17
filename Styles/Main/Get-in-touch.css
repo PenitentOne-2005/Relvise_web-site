@@ -1,12 +1,13 @@
 .page__get-in-touch {
-  padding: 10% 0px 12.4% 0px;
+  padding-top: 10%;
+  padding-bottom: 12.4%;
 
   & .get-in-touch__header-block {
     margin-bottom: 8.4%;
   }
 
   & .get-in-touch__items {
-    margin: 0px -15px;
+    margin: 0px -0.9375rem;
   }
 
   & .get-in-touch__item {
@@ -16,17 +17,22 @@
 
 /* ITEM-GET-IN-TOUCH */
 
-.item-get-in-touch__emails,
-.item-get-in-touch {
+:is(.item-get-in-touch__emails, .item-get-in-touch) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+:is(.item-get-in-touch__emails, .item-get-in-touch__icon, .item-get-in-touch__label) {
+  &:not(:last-child) {
+    margin-bottom: 0.3125rem;
+  }
+}
+
 .item-get-in-touch {
   background-color: #fff;
-  padding: 50px 15px;
+  padding: 3.125rem 0.9375rem;
 
   & .item-get-in-touch__email {
     font-weight: 600;
@@ -56,7 +62,7 @@
     min-height: 2.75rem;
     border: 1px solid #ff7b47;
     color: #ff7b47;
-    padding: 5px 20px;
+    padding: 0.3125rem 1.25rem;
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -70,7 +76,7 @@
 .item-get-in-touch_active {
   background-color: #252b42;
   color: #fff;
-  padding: 80px 15px;
+  padding: 5rem 0.9375rem;
 
   & .item-get-in-touch__button {
     color: #fff;
@@ -87,7 +93,6 @@
 }
 
 @media (min-width: 992px) {
-
   .page__get-in-touch {
     & .get-in-touch__items {
       display: flex;

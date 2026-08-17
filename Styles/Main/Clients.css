@@ -13,7 +13,7 @@
   & .clients__item {
     flex: 0 1 16.6667%;
     text-align: center;
-    padding: 8px 15px;
+    padding: 0.5rem 0.9375rem;
     min-width: 8.75rem;
 
     & img {
