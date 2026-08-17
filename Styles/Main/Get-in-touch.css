@@ -7,7 +7,7 @@
   }
 
   & .get-in-touch__items {
-    margin: 0px -0.9375rem;
+    margin: 0 -0.9375rem;
   }
 
   & .get-in-touch__item {
@@ -24,7 +24,11 @@
   align-items: center;
 }
 
-:is(.item-get-in-touch__emails, .item-get-in-touch__icon, .item-get-in-touch__label) {
+:is(
+  .item-get-in-touch__emails,
+  .item-get-in-touch__icon,
+  .item-get-in-touch__label
+) {
   &:not(:last-child) {
     margin-bottom: 0.3125rem;
   }
@@ -34,11 +38,26 @@
   background-color: #fff;
   padding: 3.125rem 0.9375rem;
 
+  opacity: 0;
+  transform: translateY(1.25rem);
+  animation: getInTouchFadeIn 0.6s ease-out forwards;
+
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
   & .item-get-in-touch__email {
     font-weight: 600;
     line-height: 150%;
     font-size: 1rem;
     color: inherit;
+
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       text-decoration: underline;
@@ -63,12 +82,21 @@
     border: 1px solid #ff7b47;
     color: #ff7b47;
     padding: 0.3125rem 1.25rem;
-    transition: all 0.3s ease-in-out;
+
+    transition:
+      color 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
 
     &:hover {
       color: #fff;
-      border: 1px solid #ff7b47;
+      border-color: #ff7b47;
       background-color: #ff7b47;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #17213c;
+      outline-offset: 3px;
     }
   }
 }
@@ -80,7 +108,39 @@
 
   & .item-get-in-touch__button {
     color: #fff;
-    border: 1px solid #fff;
+    border-color: #fff;
+
+    &:hover {
+      color: #252b42;
+      background-color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+/* STAGGER */
+
+.get-in-touch__item:nth-child(1) .item-get-in-touch {
+  animation-delay: 0.1s;
+}
+
+.get-in-touch__item:nth-child(2) .item-get-in-touch {
+  animation-delay: 0.2s;
+}
+
+.get-in-touch__item:nth-child(3) .item-get-in-touch {
+  animation-delay: 0.3s;
+}
+
+@keyframes getInTouchFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -92,12 +152,29 @@
   }
 }
 
+/* MEDIA (DESKTOP) */
+
 @media (min-width: 992px) {
   .page__get-in-touch {
     & .get-in-touch__items {
       display: flex;
       align-items: center;
-      margin: 0px;
+      margin: 0;
     }
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .item-get-in-touch {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  :is(.item-get-in-touch__email, .item-get-in-touch__button) {
+    transition: none;
   }
 }

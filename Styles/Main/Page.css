@@ -11,6 +11,8 @@
     position: relative;
     z-index: 2;
     max-width: 25rem;
+
+    animation: heroBodyFadeIn 0.8s ease-out both;
   }
 
   & .main-block__title {
@@ -18,12 +20,20 @@
     font-size: 3.625rem;
     letter-spacing: 0.2px;
     line-height: 137%;
+
+    opacity: 0;
+    transform: translateY(1.25rem);
+    animation: heroItemFadeIn 0.7s ease-out 0.15s forwards;
   }
 
   & .main-block__text {
     color: #737373;
     font-size: 1.25rem;
     line-height: 150%;
+
+    opacity: 0;
+    transform: translateY(1.25rem);
+    animation: heroItemFadeIn 0.7s ease-out 0.3s forwards;
   }
 
   & .main-block__image {
@@ -32,6 +42,9 @@
     height: 100%;
     top: 0;
     left: 0;
+
+    opacity: 0;
+    animation: heroImageFadeIn 1s ease-out forwards;
   }
 }
 
@@ -42,7 +55,11 @@
 .main-block__buttons {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.625rem 0px;
+  margin: -0.625rem 0;
+
+  opacity: 0;
+  transform: translateY(1.25rem);
+  animation: heroItemFadeIn 0.7s ease-out 0.45s forwards;
 
   & .main-block__button {
     display: flex;
@@ -56,16 +73,29 @@
     letter-spacing: 0.2px;
     padding: 0.3125rem 2.25rem;
     margin: 0.625rem 0;
+
+    transition:
+      color 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      transform 0.2s ease-in-out;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #17213c;
+      outline-offset: 3px;
+    }
   }
 
   & .main-block__button_orange {
     color: #fff;
     background-color: #ff7b47;
 
-    &:hover { 
+    &:hover {
       color: #ff7b47;
       background-color: #fff;
-      transition: background-color 0.3s ease-in-out;
     }
   }
 
@@ -73,11 +103,42 @@
     color: #0d5c63;
     border: 1px solid #0d5c63;
 
-    &:hover{
+    &:hover {
       color: #fff;
       background-color: #0d5c63;
-      transition: background-color 0.3s ease-in-out;
     }
+  }
+}
+
+@keyframes heroBodyFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -101,23 +162,40 @@
 
 @media (max-width: 767px) {
   .main-block {
+    & .main-block__title {
+      font-size: 2.625rem;
+    }
 
-   & .main-block__title {
-    font-size: 2.625rem;
-   }
+    & .main-block__button {
+      flex: 1 1 100%;
+    }
 
-   & .main-block__button {
-     flex: 1 1 100%;
-   }
-
-   & .main-block__text {
-     color: #5b5b5b;
-   }
+    & .main-block__text {
+      color: #5b5b5b;
+    }
   }
 }
 
 @media (min-width: 767px) {
   .main-block__button:not(:last-child) {
     margin-right: 0.625rem;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.main-block__body, .main-block__title, .main-block__text, .main-block__buttons, .main-block__image) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .main-block__button {
+    transition: none;
+
+    &:active {
+      transform: none;
+    }
   }
 }

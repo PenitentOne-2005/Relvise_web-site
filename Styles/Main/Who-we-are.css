@@ -18,6 +18,10 @@
   flex: 0 0 57%;
   padding-bottom: 42.25%;
 
+  opacity: 0;
+  transform: translateY(20px);
+  animation: whoWeAreFadeIn 0.7s ease-out forwards;
+
   & iframe {
     position: absolute;
     object-fit: cover;
@@ -30,6 +34,10 @@
 
 .who-we-are__content {
   flex: 1 1 auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: whoWeAreFadeIn 0.7s ease-out 0.15s forwards;
 
   .who-we-are__top:not(:last-child) {
     margin-bottom: 50px;
@@ -67,6 +75,22 @@
 .item-who-we-are {
   display: flex;
 
+  opacity: 0;
+  transform: translateY(15px);
+  animation: whoWeAreFadeIn 0.5s ease-out forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.25s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.35s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.45s;
+  }
+
   & .item-who-we-are__icon {
     flex: 0 0 32px;
   }
@@ -96,6 +120,28 @@
   }
 }
 
+@keyframes whoWeAreFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.who-we-are__video, .who-we-are__content, .item-who-we-are) {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 /* MEDIA (TABLET) */
 
 @media (min-width: 950px) {
@@ -119,10 +165,10 @@
 
   .who-we-are__video {
     padding-bottom: 56.25%;
-  }
 
-  .who-we-are__video:not(:last-child) {
-    margin-top: 5.3%;
+    &:not(:last-child) {
+      margin-top: 5.3%;
+    }
   }
 }
 

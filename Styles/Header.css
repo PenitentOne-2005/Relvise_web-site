@@ -5,6 +5,8 @@
   left: 0;
   z-index: 50;
 
+  animation: headerFadeIn 0.7s ease-out both;
+
   & .header__container {
     display: flex;
     min-height: 6.5rem;
@@ -15,6 +17,8 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: inherit;
+
+    animation: headerItemFadeIn 0.6s ease-out 0.1s both;
   }
 }
 
@@ -42,9 +46,61 @@
   color: #737373;
   line-height: 171%;
 
+  opacity: 0;
+  animation: headerItemFadeIn 0.5s ease-out both;
+
   &:hover {
-    color: #000000;
+    color: #000;
     text-decoration: underline;
-    transition: color 0.3s ease-in-out;
+  }
+}
+
+.menu__item:nth-child(1) .menu__link {
+  animation-delay: 0.2s;
+}
+
+.menu__item:nth-child(2) .menu__link {
+  animation-delay: 0.3s;
+}
+
+.menu__item:nth-child(3) .menu__link {
+  animation-delay: 0.4s;
+}
+
+.menu__item:nth-child(4) .menu__link {
+  animation-delay: 0.5s;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header__logo,
+  .menu__link {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

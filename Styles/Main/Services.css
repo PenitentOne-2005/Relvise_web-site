@@ -7,16 +7,45 @@
 .services__column {
   flex: 0 1 33.333%;
 
- & .services__item {
+  & .services__item {
     height: 100%;
     background-color: #fff;
     box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
-    padding: 2.1875rem;
     padding: 10.8% 10.6%;
+
+    opacity: 0;
+    transform: translateY(1.5rem);
+    animation: serviceCardFadeIn 0.6s ease-out forwards;
+
+    transition:
+      transform 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-0.35rem);
+      box-shadow: 0px 17px 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:nth-child(1) .services__item {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2) .services__item {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) .services__item {
+    animation-delay: 0.3s;
   }
 
   & .item-service_green {
     background-color: #0d5c63;
+
+    & .item-service__title,
+    & .item-service__text {
+      color: #fff;
+    }
   }
 
   & .item-service__title {
@@ -24,6 +53,10 @@
     font-size: 1.5rem;
     letter-spacing: 0.1px;
     line-height: 133%;
+
+    &:not(:last-child) {
+      margin-bottom: 0.3125rem;
+    }
   }
 
   & .item-service__text {
@@ -31,8 +64,20 @@
     line-height: 142%;
   }
 
-  :is(.item-service_green .item-service__title, .item-service__text) {
+  &:is(.item-service_green .item-service__title) {
     color: #fff;
+  }
+}
+
+@keyframes serviceCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -56,12 +101,23 @@
 
 @media (min-width: 670px) {
   .services__column {
-    padding: 0px 0.9375rem;
+    padding: 0 0.9375rem;
   }
 
   .services__body {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px -0.9375rem;
+    margin: 0 -0.9375rem;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .services__column .services__item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
