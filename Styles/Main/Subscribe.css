@@ -1,6 +1,6 @@
 .page__subscribe {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
 
   &::before {
     content: "";
@@ -43,7 +43,7 @@
     border: 1px solid #e6e6e6;
     border-right: 0;
     background-color: #f9f9f9;
-    padding: 0px 20px;
+    padding-inline: 1.25rem;
 
     &:focus {
       color: #000;
@@ -61,7 +61,7 @@
     border: 1px solid #e6e6e6;
     background-color: #ff7b47;
     border-radius: 0px 5px 5px 0px;
-    padding: 0px 22px;
+    padding-inline: 1.375rem;
 
     &:hover {
       background-color: #ca6137;
@@ -74,7 +74,7 @@
 
 @media (min-width: 1070px) {
   .subscribe__body {
-    margin: 0px 30px;
+    margin: 0px 1.875rem;
   }
 }
 
@@ -94,15 +94,14 @@
 
 @media (max-width: 810px) {
   .subscribe__body {
-    margin: 0px -15px;
- 
-   & .subscribe__input,
-     .subscribe__button {
-      padding: 0px 15px;
+    margin: 0px -0.9375rem;
+
+    & :is(.subscribe__input, .subscribe__button) {
+      padding-inline: 0.9375rem;
     }
   }
 
   .subscribe__title {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 }

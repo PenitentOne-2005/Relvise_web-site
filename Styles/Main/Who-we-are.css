@@ -1,6 +1,7 @@
 .page__who-we-are {
   background-color: #fff;
-  padding: 7.3% 0px 11.9% 0px;
+  padding-top: 7.3%;
+  padding-bottom: 11.9%;
 
   & .who-we-are__header-block {
     margin-bottom: 10.3%;
@@ -99,7 +100,8 @@
 
 @media (min-width: 950px) {
   .who-we-are__content {
-    padding: 3% 0px 0px 8.9%;
+    padding-top: 3%;
+    padding-left: 8.9%;
   }
 }
 
@@ -129,7 +131,7 @@
 @media (max-width: 767px) {
   .who-we-are__content {
     & .who-we-are__top:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
     }
   }
 }
