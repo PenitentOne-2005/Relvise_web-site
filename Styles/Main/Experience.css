@@ -89,6 +89,10 @@
   }
 }
 
+.advantages__container {
+  height: 23.8125rem;
+}
+
 .advantages__header-block {
   margin-bottom: 8.1%;
 }

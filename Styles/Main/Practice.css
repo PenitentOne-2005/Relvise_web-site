@@ -43,6 +43,10 @@
   }
 }
 
+.practice__container {
+  height: 32.125rem;
+}
+
 .practice__header-block {
   margin-bottom: 6.4%;
 }
