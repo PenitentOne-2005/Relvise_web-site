@@ -8,6 +8,7 @@
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 1.25rem;
+  height: 21.3125rem;
 
   & .practice__column {
     flex: 0 1 15.625rem;

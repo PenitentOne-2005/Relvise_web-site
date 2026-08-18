@@ -6,7 +6,8 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 1.875rem;
-  margin: 0 -15px -1.875rem;
+  height: 11.875rem;
+  margin: 0 -0.9375rem -1.875rem;
 }
 
 .advantages__column {
