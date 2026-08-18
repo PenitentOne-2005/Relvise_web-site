@@ -23,13 +23,3 @@ A modern, responsive landing page for a financial consulting and business adviso
 ├── Styles/          # Stylesheets (layout, typography, responsive rules)
 ├── index.html       # Main landing page markup
 ```
-
-## Local Setup
-
-This is a static HTML/CSS project — no compilation or build steps are required.
-
-```bash
-git clone https://github.com/your-username/relvise-finance-website.git
-```
-
-Simply open `index.html` in any web browser or run it through a local server extension (such as Live Server in VS Code).
