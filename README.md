@@ -6,6 +6,7 @@ A modern, responsive landing page for a financial consulting and business adviso
 
 - 📱 **Responsive Layout** — Adaptive design structured with modern CSS layout techniques (Flexbox & Grid), seamlessly adjusting to desktop, tablet, and mobile viewports.
 - ♿ **Text & Accessibility Optimization** — Flexible typographic units (`rem`) ensure that the layout, spacing, and readability dynamically scale when changing base font sizes in browser settings.
+- ⌨️ **Keyboard accessibility** — all interactive elements (navigation, cards, search) are reachable via Tab/Shift+Tab, with visible :focus styles and a logical focus order.
 - 🎬 **Smooth Animations & Transitions** — Built-in visual feedback and interactive transitions with native support for `@media (prefers-reduced-motion)`. Animations automatically disable based on system and browser accessibility preferences.
 - 🎨 **Clean Visual Hierarchy** — Features prominent CTA banners, service highlights, stat counters, and structured content blocks.
 
