@@ -1,12 +1,11 @@
 .page__advantages {
-  padding: 7.5%;
+  padding: 7.5%
 }
 
 .advantages__body {
   display: flex;
   flex-wrap: wrap;
   row-gap: 1.875rem;
-  height: 11.875rem;
   margin: 0 -0.9375rem -1.875rem;
 }
 
@@ -87,10 +86,6 @@
     color: #737373;
     line-height: 142%;
   }
-}
-
-.advantages__container {
-  height: 23.8125rem;
 }
 
 .advantages__header-block {

@@ -78,3 +78,8 @@ body {
   left: 0;
   object-fit: cover;
 }
+
+:where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 0.1875rem solid #0077ff;
+  outline-offset: 0.1875rem;
+}

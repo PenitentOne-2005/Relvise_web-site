@@ -8,7 +8,6 @@
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 1.25rem;
-  height: 21.3125rem;
 
   & .practice__column {
     flex: 0 1 15.625rem;
@@ -41,10 +40,6 @@
       transform: translateY(-0.25rem);
     }
   }
-}
-
-.practice__container {
-  height: 32.125rem;
 }
 
 .practice__header-block {
@@ -156,6 +151,10 @@
     & .practice__column {
       flex: 0 1 100%;
     }
+  }
+
+  .footer__row {
+    justify-content: center;
   }
 }
 
